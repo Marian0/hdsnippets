@@ -114,6 +114,9 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		//Added by HD
+		'Cartalyst\Sentry\SentryServiceProvider',
+
 	),
 
 	/*
@@ -178,6 +181,11 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+		//Alias added by HD
+		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'Tag' => 'App\Models\Tag',
+		'Snippet' => 'App\Models\Snippet',
 
 	),
 

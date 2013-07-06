@@ -1,9 +1,11 @@
-<?php
+<?php 
+namespace App\Models;
 
+use Eloquent;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterface, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
@@ -47,6 +49,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getReminderEmail()
 	{
 		return $this->email;
+	}
+
+
+	public function snippets() {
+		return $this->hasMany('Snippet');
 	}
 
 }
