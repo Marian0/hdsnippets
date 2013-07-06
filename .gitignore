@@ -7,3 +7,6 @@ composer.lock
 #Archivos temporales
 
 *~
+
+#Ingoramos la configuración de la DB
+app/config/database.php
