@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Laravel PHP Framework</title>
+    <?php echo HTML::style('themes/cyborg/bootstrap.min.css') ?>
     <style>
         @import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
 
