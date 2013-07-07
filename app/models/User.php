@@ -23,8 +23,7 @@ class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterfac
 	 *
 	 * @return mixed
 	 */
-	public function getAuthIdentifier()
-	{
+	public function getAuthIdentifier() {
 		return $this->getKey();
 	}
 
@@ -33,8 +32,7 @@ class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterfac
 	 *
 	 * @return string
 	 */
-	public function getAuthPassword()
-	{
+	public function getAuthPassword() {
 		return $this->password;
 	}
 
@@ -43,11 +41,9 @@ class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterfac
 	 *
 	 * @return string
 	 */
-	public function getReminderEmail()
-	{
+	public function getReminderEmail() {
 		return $this->email;
 	}
-
 
 	public function snippets() {
 		return $this->hasMany('Snippet');
