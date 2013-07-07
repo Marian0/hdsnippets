@@ -7,7 +7,8 @@
 		"cartalyst/sentry": "2.0.*",
 		"imagine/Imagine": "v0.4.1",
 		"dflydev/markdown": "v1.0.2",
-		"laravelbook/ardent": "dev-master"
+		"laravelbook/ardent": "dev-master",
+		"edvinaskrucas/notification": "1.*"
 	},
 	"autoload": {
 		"classmap": [
