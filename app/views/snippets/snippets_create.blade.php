@@ -38,7 +38,7 @@
 			<div class="control-group">
 				{{ Form::label('code_language', 'Language') }}
 				<div class="controls">
-					{{ Form::select('size', array('1' => 'PHP', '2' => 'C++')) }}
+					{{ Form::select('code_language', array('1' => 'PHP', '2' => 'C++')) }}
 				</div>
 			</div>
 

@@ -21,7 +21,7 @@ class SnippetsController extends BaseController {
 		$snippet->title   = Input::get('title');
 		$snippet->description   = Input::get('description');
 		$snippet->snippet   = Input::get('snippet');
-		$snippet->code_language   = Input::get('code_language',0);
+		$snippet->code_language   = (int) Input::get('code_language', 0);
 		$snippet->user_id = Sentry::getUser()->id;
 		
 		if ($snippet->save()) {
