@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Models;
+
+use LaravelBook\Ardent\Ardent;
 use Eloquent;
 
-class Snippet extends Eloquent {
+class Snippet extends Ardent {
 	protected $table = 'snippets';
 
 	public function tags() {
@@ -13,4 +15,10 @@ class Snippet extends Eloquent {
 	public function author() {
 		return $this->belongsTo('App\Models\User');
 	}
+
+
+	public static $rules = array(
+	    'title' => 'required|between:4,200',
+	    'snippet' => 'required',
+  	);
 }

@@ -29,7 +29,8 @@ Route::get('admin/logout',  array('as' => 'tags.latest',      'uses' => 'App\Con
 Route::get('admin/logout',  array('as' => 'languages.browse',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
 Route::get('admin/login',   array('as' => 'user.register',       'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
 
-Route::get('admin/logout',  array('as' => 'snippets.create',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
+Route::get('snippets/create',  array('as' => 'snippets.create',      'uses' => 'SnippetsController@create'));
+Route::post('snippets/store',  array('as' => 'snippets.store',      'uses' => 'SnippetsController@store'));
 
 
 Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
