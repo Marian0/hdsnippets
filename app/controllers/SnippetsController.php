@@ -18,6 +18,7 @@ class SnippetsController extends BaseController {
 
 		if ($snippet->save()) {
 //			return "HOLA ?";
+			Notification::success('The snippet is now created');
 			return Redirect::route('snippets.view', $snippet->id);
 		} else {
 			return Redirect::back()->withInput()->withErrors($snippet->errors());

@@ -3,6 +3,7 @@
 
 @section('main')
 <div>
+	@include('_partials.notifications')
 	<h2>{{ $snippet->title }}</h2>
 
 	<hr>
