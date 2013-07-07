@@ -10,42 +10,39 @@
 	       <a class="brand" href="#">HD Snippets</a>
 	       <div class="nav-collapse collapse" id="main-menu">
 	        <ul class="nav" id="main-menu-left">
-	          <li><a href="#">News</a></li>
-	          <li><a id="swatch-link" href="#">Snippets</a></li>
-	          <li class="dropdown">
-	            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Preview <b class="caret"></b></a>
+	         <li class="dropdown">
+	            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Snippets <b class="caret"></b></a>
 	            <ul class="dropdown-menu" id="swatch-menu">
-	              <li><a href="../default/">Default</a></li>
-	              <li class="divider"></li>
-	              <li><a href="../amelia/">Amelia</a></li>
-	              <li><a href="../cerulean/">Cerulean</a></li>
-	              <li><a href="../cosmo/">Cosmo</a></li>
-	              <li><a href="../cyborg/">Cyborg</a></li>
-	              <li><a href="../flatly/">Flatly</a></li>
-	              <li><a href="../journal/">Journal</a></li>
-	              <li><a href="../readable/">Readable</a></li>
-	              <li><a href="../simplex/">Simplex</a></li>
-	              <li><a href="../slate/">Slate</a></li>
-	              <li><a href="../spacelab/">Spacelab</a></li>
-	              <li><a href="../spruce/">Spruce</a></li>
-	              <li><a href="../superhero/">Superhero</a></li>
-	              <li><a href="../united/">United</a></li>
+					<li><a href="{{ URL::route('snippets.popular') }}">Popular</a></li>
+					<li><a href="{{ URL::route('snippets.latest') }}">Latest</a></li>
+	            </ul>
+	         </li>
+             <li class="dropdown">
+	            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tags <b class="caret"></b></a>
+	            <ul class="dropdown-menu" id="swatch-menu">
+					<li><a href="{{ URL::route('tags.popular') }}">Popular</a></li>
+					<li><a href="{{ URL::route('tags.latest') }}">Latest</a></li>
 	            </ul>
 	          </li>
-	          <li class="dropdown" id="preview-menu">
-	            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Download <b class="caret"></b></a>
-	            <ul class="dropdown-menu">
-	              <li><a target="_blank" href="bootstrap.min.css">bootstrap.min.css</a></li>
-	              <li><a target="_blank" href="bootstrap.css">bootstrap.css</a></li>
-	              <li class="divider"></li>
-	              <li><a target="_blank" href="variables.less">variables.less</a></li>
-	              <li><a target="_blank" href="bootswatch.less">bootswatch.less</a></li>
-	            </ul>
-	          </li>
+	          <li><a id="swatch-link" href="{{ URL::route('languages.browse') }}">Browse Languages</a></li>
+
 	        </ul>
 	        <ul class="nav pull-right" id="main-menu-right">
-	          <li><a rel="tooltip" target="_blank" href="#" title="">Register <i class="icon-share-alt"></i></a></li>
-	          <li><a rel="tooltip" target="_blank" href="#" title="">Login <i class="icon-share-alt"></i></a></li>
+	          @if (Sentry::check())
+  		          <li><a rel="tooltip" target="_blank" href="{{ URL::route('snippets.create') }}" title="">Create Snippet </a></li>
+		           <li class="dropdown">
+		            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ Sentry::getUser()->email }} <b class="caret"></b></a>
+		            <ul class="dropdown-menu" id="swatch-menu">
+		              <li><a href="../default/">My Snippets</a></li>
+		              <li><a href="../default/">Profile</a></li>
+		              <li class="divider"></li>
+		              <li><a href="{{ URL::route('user.logout') }}">Logout</a></li>
+		            </ul>
+		          </li>
+	          @else
+		          <li><a rel="tooltip" target="_blank" href="{{ URL::route('user.register') }}" title="">Register <i class="icon-share-alt"></i></a></li>
+		          <li><a rel="tooltip" target="_blank" href="{{ URL::route('user.login') }}" title="">Login <i class="icon-share-alt"></i></a></li>
+		       @endif
 	        </ul>
 	       </div>
 	     </div>
