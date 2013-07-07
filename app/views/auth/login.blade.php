@@ -4,7 +4,7 @@
 
 	<div id="login" class="login">
 		<h1>Loggin</h1>
-		<h2>Welcome to HD Snippets Community</h2>
+		<p class="lead">Welcome to HD Snippets Community</p>
 		{{ Form::open() }}
 
 			@if ($errors->has('login'))

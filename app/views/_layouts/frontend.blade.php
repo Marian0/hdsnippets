@@ -15,6 +15,8 @@
 
 	@include('_partials.footer')
      </div><!-- /container -->
-
+    <script src="http://bootswatch.com/js/jquery.smooth-scroll.min.js"></script>
+    <script src="http://bootswatch.com/js/bootstrap.min.js"></script>
+    <script src="http://bootswatch.com/js/bootswatch.js"></script>
 </body>
 </html>
