@@ -1,9 +1,5 @@
 <?php
 
-// namespace App\Controllers;
-//use Auth, BaseController, Form, Input, Redirect, Sentry, View;
-// use Snippet;
-
 class SnippetsController extends BaseController {
 
 	public function create() {
@@ -30,7 +26,12 @@ class SnippetsController extends BaseController {
 	
 	public function view($id) {
 		$snippet = Snippet::find($id); //TODO: VALIDATES IF EXISTS
-		return View::make('snippets/snippets_show')->with('snippet' , $snippet );
+		$author = Sentry::getUserProvider()->findById($snippet->user_id);
+		
+		return View::make('snippets/snippets_show')
+				->with('snippet' , $snippet )
+				->with('author', $author)
+		;
 	}
 
 }
