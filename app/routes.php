@@ -11,15 +11,23 @@
   |
  */
 
+Route::get('/test', function() {
+    $user = new User;
+    dd($user);
+});
+
 Route::get('/', function() {
 			return View::make('home');
-		});
+});
 
 //LOGIN
 Route::get('user/login', array('as' => 'user.login', 'uses' => 'AuthController@getLogin'));
 Route::post('user/login', array('as' => 'user.login.post', 'uses' => 'AuthController@postLogin'));
 Route::get('user/logout', array('as' => 'user.logout', 'uses' => 'AuthController@getLogout'));
 Route::get('snippets/view/{id}', array('as' => 'snippets.view', 'uses' => 'SnippetsController@view'));
+//Register
+Route::get('user/register', array('as' => 'user.register', 'uses' => 'AuthController@register'));
+Route::post('user/store', array('as' => 'user.store', 'uses' => 'AuthController@store'));
 
 //Secured controllers
 Route::group(array('before' => 'auth'), function() {
@@ -32,4 +40,4 @@ Route::get('admin/logout', array('as' => 'snippets.latest', 'uses' => 'SnippetsC
 Route::get('admin/logout', array('as' => 'tags.popular', 'uses' => 'TagsController@getPopular'));
 Route::get('admin/logout', array('as' => 'tags.latest', 'uses' => 'TagsController@getLatest'));
 Route::get('admin/logout', array('as' => 'languages.browse', 'uses' => 'SnippetsController@getByLanguages'));
-Route::get('admin/login', array('as' => 'user.register', 'uses' => 'AuthController@Register'));
+

@@ -41,11 +41,26 @@ class AuthController extends BaseController {
 	 * Logout action
 	 * @return Redirect
 	 */
-	public function getLogout()
-	{
+	public function getLogout() {
 		Sentry::logout();
 
 		return Redirect::route('user.login');
+	}
+
+
+	public function register() {
+		return View::make('users.register');
+	}
+
+	public function store() {
+
+		$user = Sentry::getUserProvider()->create(array(
+	        'email'    => Input::get('email'),
+	        'password' => Input::get('password'),
+	        'first_name' => Input::get('first_name'),
+	        'last_name' => Input::get('last_name'),
+
+    	));
 	}
 
 }
