@@ -186,8 +186,6 @@ return array(
 		
 		//Alias added by HD
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'Tag' => 'App\Models\Tag',
-		'Snippet' => 'App\Models\Snippet',
 
 	),
 

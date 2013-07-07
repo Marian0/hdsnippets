@@ -1,8 +1,5 @@
 <?php
 
-use App\Models\Tag;
-use App\Models\Snippet;
-
 class ContentSeeder extends Seeder {
 
 	public function run()
