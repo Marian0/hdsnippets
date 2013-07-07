@@ -1,19 +1,15 @@
 <?php
-
-namespace App\Models;
-
 use LaravelBook\Ardent\Ardent;
-use Eloquent;
 
 class Snippet extends Ardent {
 	protected $table = 'snippets';
 
 	public function tags() {
-		return $this->belongsToMany('App\Models\Tag');
+		return $this->belongsToMany('Tag');
 	}
 
 	public function author() {
-		return $this->belongsTo('App\Models\User');
+		return $this->belongsTo('User');
 	}
 
 

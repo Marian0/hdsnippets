@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\User;
-
 class SentrySeeder extends Seeder {
 
 	public function run()
