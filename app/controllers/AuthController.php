@@ -33,7 +33,7 @@ class AuthController extends BaseController {
 		}
 		catch(\Exception $e)
 		{
-			return Redirect::route('user.login')->withErrors(array('login' => $e->getMessage()));
+			return Redirect::route('user.login')->withInput()->withErrors(array('login' => $e->getMessage()));
 		}
 	}
 
