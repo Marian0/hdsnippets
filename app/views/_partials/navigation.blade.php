@@ -7,7 +7,7 @@
 	         <span class="icon-bar"></span>
 	         <span class="icon-bar"></span>
 	       </a>
-	       <a class="brand" href="../">HD Snippets</a>
+	       <a class="brand" href="#">HD Snippets</a>
 	       <div class="nav-collapse collapse" id="main-menu">
 	        <ul class="nav" id="main-menu-left">
 	          <li><a href="#">News</a></li>
@@ -44,6 +44,7 @@
 	          </li>
 	        </ul>
 	        <ul class="nav pull-right" id="main-menu-right">
+	          <li><a rel="tooltip" target="_blank" href="#" title="">Register <i class="icon-share-alt"></i></a></li>
 	          <li><a rel="tooltip" target="_blank" href="#" title="">Login <i class="icon-share-alt"></i></a></li>
 	        </ul>
 	       </div>
