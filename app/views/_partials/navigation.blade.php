@@ -29,7 +29,7 @@
 	        </ul>
 	        <ul class="nav pull-right" id="main-menu-right">
 	          @if (Sentry::check())
-  		          <li><a rel="tooltip" target="_blank" href="{{ URL::route('snippets.create') }}" title="">Create Snippet </a></li>
+  		          <li><a rel="tooltip" href="{{ URL::route('snippets.create') }}" title="">Create Snippet </a></li>
 		           <li class="dropdown">
 		            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ Sentry::getUser()->email }} <b class="caret"></b></a>
 		            <ul class="dropdown-menu" id="swatch-menu">
@@ -40,8 +40,8 @@
 		            </ul>
 		          </li>
 	          @else
-		          <li><a rel="tooltip" target="_blank" href="{{ URL::route('user.register') }}" title="">Register <i class="icon-share-alt"></i></a></li>
-		          <li><a rel="tooltip" target="_blank" href="{{ URL::route('user.login') }}" title="">Login <i class="icon-share-alt"></i></a></li>
+		          <li><a href="{{ URL::route('user.register') }}" title="">Register <i class="icon-share-alt"></i></a></li>
+		          <li><a href="{{ URL::route('user.login') }}" title="">Login <i class="icon-share-alt"></i></a></li>
 		       @endif
 	        </ul>
 	       </div>
