@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('auth/login');
+	return View::make('home');
 });
 
 //LOGIN
@@ -21,21 +21,15 @@ Route::get('user/login',   array('as' => 'user.login',       'uses' => 'AuthCont
 Route::post('user/login',  array('as' => 'user.login.post',  'uses' => 'AuthController@postLogin'));
 Route::get('user/logout',  array('as' => 'user.logout',      'uses' => 'AuthController@getLogout'));
 
-
-Route::get('admin/logout',  array('as' => 'snippets.popular',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
-Route::get('admin/logout',  array('as' => 'snippets.latest',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
-Route::get('admin/logout',  array('as' => 'tags.popular',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
-Route::get('admin/logout',  array('as' => 'tags.latest',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
-Route::get('admin/logout',  array('as' => 'languages.browse',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
-Route::get('admin/login',   array('as' => 'user.register',       'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
-
-Route::get('snippets/create',  array('as' => 'snippets.create',      'uses' => 'SnippetsController@create'));
-Route::post('snippets/store',  array('as' => 'snippets.store',      'uses' => 'SnippetsController@store'));
-
-
-Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
-{
-	Route::any('/',                'App\Controllers\Admin\PagesController@index');
-	Route::resource('articles',    'App\Controllers\Admin\ArticlesController');
-	Route::resource('pages',       'App\Controllers\Admin\PagesController');
+//Secured controllers
+Route::group(array('before' => 'auth'), function() {
+	Route::get('snippets/create',  array('as' => 'snippets.create',      'uses' => 'SnippetsController@create'));
+	Route::post('snippets/store',  array('as' => 'snippets.store',      'uses' => 'SnippetsController@store'));
 });
+
+Route::get('admin/logout',  array('as' => 'snippets.popular',      'uses' => 'SnippetsController@getPopular'));
+Route::get('admin/logout',  array('as' => 'snippets.latest',      'uses' => 'SnippetsController@getLatest'));
+Route::get('admin/logout',  array('as' => 'tags.popular',      'uses' => 'TagsController@getPopular'));
+Route::get('admin/logout',  array('as' => 'tags.latest',      'uses' => 'TagsController@getLatest'));
+Route::get('admin/logout',  array('as' => 'languages.browse',      'uses' => 'SnippetsController@getByLanguages'));
+Route::get('admin/login',   array('as' => 'user.register',       'uses' => 'AuthController@Register'));

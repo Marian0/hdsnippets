@@ -1,6 +1,4 @@
 <?php 
-// namespace App\Controllers;
-
 // use Auth, BaseController, Form, Input, Redirect, Sentry, View;
 
 class AuthController extends BaseController {
@@ -9,8 +7,7 @@ class AuthController extends BaseController {
 	 * Display the login page
 	 * @return View
 	 */
-	public function getLogin()
-	{
+	public function getLogin() {
 		return View::make('auth/login');
 	}
 
