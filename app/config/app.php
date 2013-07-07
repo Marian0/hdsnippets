@@ -113,10 +113,10 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Krucas\Notification\NotificationServiceProvider',
 
 		//Added by HD
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Krucas\Notification\NotificationServiceProvider',
 
 	),
 
@@ -182,10 +182,10 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Notification' => 'Krucas\Notification\Facades\Notification',
 		
 		//Alias added by HD
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'Notification' => 'Krucas\Notification\Facades\Notification',
 
 	),
 
