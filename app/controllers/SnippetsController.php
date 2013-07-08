@@ -35,4 +35,11 @@ class SnippetsController extends BaseController {
 		;
 	}
 
+
+	public function getLatest() {
+		$snippets = Snippet::orderBy('updated_at')->take(20)->get();
+		return View::make('snippets/snippets_list')->with('snippets' , $snippets);
+
+	}
+
 }
