@@ -11,10 +11,10 @@
   |
  */
 
-Route::get('/test', function() {
-    $user = new User;
-    dd($user);
-});
+// Route::get('/test', function() {
+//     $user = new User;
+//     dd($user);
+// });
 
 Route::get('/', function() {
 			return View::make('home');

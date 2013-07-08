@@ -9,7 +9,7 @@ class Snippet extends Ardent {
 	}
 
 	public function author() {
-		return $this->belongsTo('User');
+		return $this->belongsTo('User', 'user_id');
 	}
 
 
