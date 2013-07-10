@@ -2,18 +2,21 @@
 
 
 @section('main')
-<div>
+<div class="snippetBody">
 	@include('_partials.notifications')
 	<h2>{{ $snippet->title }}</h2>
 	<div class="well">
 	
 	<h5>{{ $snippet->author_name() }} @ {{ $snippet->created_at }}</h5>
+
+	<div class="theDescription">
 	{{ $snippet->description }}
-	
+	</div>
+
 	<h4>The snippet | Language <span class="label label-important">PHP</span></h4>
-		<div class="alert">
+		<code>
 			{{{$snippet->snippet}}}
-		</div>
+		</code>
 	<h4>Ranking</h4>
 	<ul>
 		<li>Votes: {{ $snippet->votes }}</li>

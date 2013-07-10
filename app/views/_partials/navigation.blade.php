@@ -27,6 +27,11 @@
 	          <li><a id="swatch-link" href="{{ URL::route('languages.browse') }}">Browse Languages</a></li>
 
 	        </ul>
+
+    		<form class="navbar-search pull-left">
+    			<input type="text" class="search-query" placeholder="Search">
+    		</form>
+
 	        <ul class="nav pull-right" id="main-menu-right">
 	          @if (Sentry::check())
   		          <li><a rel="tooltip" href="{{ URL::route('snippets.create') }}" title=""> <i class="icon-plus"></i> Create Snippet</a></li>
