@@ -7,7 +7,7 @@
 	         <span class="icon-bar"></span>
 	         <span class="icon-bar"></span>
 	       </a>
-	       <a class="brand" href="#">HD Snippets</a>
+	       <a class="brand" href="{{ URL::route('homepage') }}">HD Snippets</a>
 	       <div class="nav-collapse collapse" id="main-menu">
 	        <ul class="nav" id="main-menu-left">
 	         <li class="dropdown">

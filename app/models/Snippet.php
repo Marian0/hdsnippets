@@ -12,6 +12,11 @@ class Snippet extends Ardent {
 		return $this->belongsTo('User', 'user_id');
 	}
 
+	public function author_name() {
+		if (isset($this->author->first_name ))
+			return $this->author->first_name . ' ' . $this->author->last_name;
+		return 'Anonymus';
+	}
 
 	public static $rules = array(
 	    'title' => 'required|between:4,200',

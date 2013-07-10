@@ -49,4 +49,14 @@ class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterfac
 		return $this->hasMany('Snippet');
 	}
 
+    public static $rules = array(
+        'first_name'      => 'required|min:3|max:80|alpha_dash',
+        'last_name'      => 'required|min:3|max:80|alpha_dash',
+        'email'     => 'required|between:3,64|email|unique:users',
+        'password'  =>'required|alpha_num|between:4,8|confirmed',
+        'password_confirmation'=>'required|alpha_num|between:4,8'
+    );
+	public $autoPurgeRedundantAttributes = true;
+
+
 }

@@ -7,10 +7,7 @@
 		<p class="lead">Register an account to share your snippets. It's free and takes 3 seconds.</p>
 		{{ Form::open(array('route' => 'user.store')) }}
 
-			@if ($errors->has('login'))
-				<div class="alert alert-error">{{ $errors->first('login', ':message') }}</div>
-			@endif
-
+			@include('_partials.notifications')
 			<div class="control-group">
 				{{ Form::label('first_name', 'First Name') }}
 				<div class="controls">

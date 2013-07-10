@@ -17,7 +17,6 @@ class SnippetsController extends BaseController {
 		$snippet->user_id = Sentry::getUser()->id;
 
 		if ($snippet->save()) {
-//			return "HOLA ?";
 			Notification::success('The snippet is now created');
 			return Redirect::route('snippets.view', $snippet->id);
 		} else {
@@ -27,17 +26,18 @@ class SnippetsController extends BaseController {
 	
 	public function view($id) {
 		$snippet = Snippet::find($id); //TODO: VALIDATES IF EXISTS
-		$author = Sentry::getUserProvider()->findById($snippet->user_id);
+		
+		$snippet->visits += 1;
+		$snippet->save();
 		
 		return View::make('snippets/snippets_show')
 				->with('snippet' , $snippet )
-				->with('author', $author)
 		;
 	}
 
 
 	public function getLatest() {
-		$snippets = Snippet::orderBy('updated_at')->take(20)->get();
+		$snippets = Snippet::orderBy('updated_at', 'desc')->take(20)->get();
 		return View::make('snippets/snippets_list')->with('snippets' , $snippets);
 
 	}

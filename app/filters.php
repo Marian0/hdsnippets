@@ -36,7 +36,7 @@ Route::filter('auth', function()
 {
 	if ( ! Sentry::check())
 	{
-		return Redirect::route('admin.login');
+		return Redirect::route('user.login');
 	}
 });
 

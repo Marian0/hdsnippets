@@ -16,9 +16,7 @@
 //     dd($user);
 // });
 
-Route::get('/', function() {
-			return View::make('home');
-});
+Route::get('/', array('as' => 'homepage', 'uses' => 'HomeController@homepage'));
 
 //LOGIN
 Route::get('user/login', array('as' => 'user.login', 'uses' => 'AuthController@getLogin'));
