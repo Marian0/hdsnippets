@@ -117,11 +117,12 @@
 						if($(this).html().length<2){
 							var rep = ($(this).html()).replace(/\s/g,"");
 							if(rep==""){
-								if($.browser.opera){
-									$(this).html("&nbsp;");
-								} else {
-									$(this).html("<span style='display:none;'>&nbsp;</span>");	
-								}
+//								if($.browser.opera){
+//									$(this).html("&nbsp;");
+//								} else {
+//									$(this).html("<span style='display:none;'>&nbsp;</span>");	
+//								}
+								$(this).html("<span style='display:none;'>&nbsp;</span>");
 							}
 						}
 					});
