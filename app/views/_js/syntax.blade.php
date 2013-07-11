@@ -8,6 +8,8 @@
 		style: 'vampire'
 	};
 	
+	//clipboard: "{ URL::asset('assets/higlighter/ZeroClipboard.swf') }"
+	
 	$( document ).ready(function() {
 		syntax.init();
 	});

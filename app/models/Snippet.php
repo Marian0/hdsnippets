@@ -23,6 +23,8 @@ class Snippet extends Ardent {
 		$languages['python'] = 'Python';
 		$languages['ruby'] = 'Ruby';
 		$languages['sql'] = 'SQL';
+		$languages['sh'] = 'Shell';
+		$languages['sml'] = 'Standard ML';
 		$languages['xml'] = 'XML';
 		
 		return $languages;
