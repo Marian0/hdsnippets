@@ -5,7 +5,7 @@
 	
 	var syntax = syntax || {};
 	syntax.OPTIONS = {
-		style: 'vampire'
+		style: 'neon'
 	};
 	
 	//clipboard: "{ URL::asset('assets/higlighter/ZeroClipboard.swf') }"
