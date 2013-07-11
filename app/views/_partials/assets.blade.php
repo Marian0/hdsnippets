@@ -1,10 +1,11 @@
 
 <!-- CSS -->
-<link href="{{ URL::asset('assets/bootstrap-themes/cyborg/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('assets/bootstrap-themes/cyborg/custom.css') }}" rel="stylesheet">
-
-<link href="{{ URL::asset('assets/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">
-
+{{ HTML::style('assets/bootstrap-themes/cyborg/bootstrap.min.css') }}
+{{ HTML::style('assets/bootstrap-themes/cyborg/custom.css') }}
+{{ HTML::style('assets/bootstrap/css/bootstrap-responsive.css') }}
+{{ HTML::style('assets/higlighter/jquery.snippet.css') }}
 
 <!-- SRCIPTS -->
-<script src="{{ URL::asset('assets/js/jquery-2.0.3.min.js') }}"></script>
+{{ HTML::script('assets/js/jquery-2.0.3.min.js') }}
+{{ HTML::script('assets/higlighter/jquery.snippet.js') }}
+

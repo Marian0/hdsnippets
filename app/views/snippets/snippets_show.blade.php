@@ -13,10 +13,10 @@
 	{{ $snippet->description }}
 	</div>
 
-	<h4>The snippet | Language <span class="label label-important">PHP</span></h4>
-		<code>
+	<h4>The snippet | Language <span class="label label-important">{{ $snippet->getFriendlyLanguage() }}</span></h4>
+		<pre class="syntaxCode" data-language='{{ $snippet->getLanguageShortCode() }}'>
 			{{{$snippet->snippet}}}
-		</code>
+		</pre>
 	<h4>Ranking</h4>
 	<ul>
 		<li>Votes: {{ $snippet->votes }}</li>
@@ -74,5 +74,8 @@
 		</ul>
 	</div>
 </div>
+
+
+@include('_js.syntax')
 
 @stop
