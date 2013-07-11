@@ -13,6 +13,8 @@
 	         <li class="dropdown">
 	            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Snippets <b class="caret"></b></a>
 	            <ul class="dropdown-menu" id="swatch-menu">
+					<li><a href="{{ URL::route('snippets.create') }}">New Snippet</a></li>
+					<li class="divider"></li>
 					<li><a href="{{ URL::route('snippets.popular') }}">Popular</a></li>
 					<li><a href="{{ URL::route('snippets.latest') }}">Latest</a></li>
 	            </ul>
