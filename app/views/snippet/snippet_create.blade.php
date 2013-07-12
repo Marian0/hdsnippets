@@ -1,4 +1,4 @@
-@extends('_layouts.frontend')
+@extends('_layout.frontend')
 
 
 @section('main')
@@ -7,8 +7,8 @@
 		<h1>New Snippet</h1>
 		<p class="lead">Do it tidy for all the community :)</p>
 
-		@include('_partials.notifications')
-		{{ Form::open(array('route' => 'snippets.store')) }}
+		@include('_partial.notifications')
+		{{ Form::open(array('route' => 'snippet.store')) }}
 
 			@if ($errors->has('login'))
 				<div class="alert alert-error">{{ $errors->first('login', ':message') }}</div>

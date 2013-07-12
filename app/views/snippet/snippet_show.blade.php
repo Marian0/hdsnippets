@@ -1,9 +1,9 @@
-@extends('_layouts.frontend')
+@extends('_layout.frontend')
 
 
 @section('main')
 <div class="snippetBody">
-	@include('_partials.notifications')
+	@include('_partial.notifications')
 	<h2>{{ $snippet->title }}</h2>
 	<div class="well">
 	

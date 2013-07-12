@@ -1,9 +1,9 @@
 <?php
 
-class SnippetsController extends BaseController {
+class SnippetController extends BaseController {
 
 	public function create() {
-		return View::make('snippets/snippets_create');
+		return View::make('snippet/snippet_create');
 	}
 
 	public function store() {
@@ -18,7 +18,7 @@ class SnippetsController extends BaseController {
 
 		if ($snippet->save()) {
 			Notification::success('The snippet is now created');
-			return Redirect::route('snippets.view', $snippet->id);
+			return Redirect::route('snippet.view', $snippet->id);
 		} else {
 			return Redirect::back()->withInput()->withErrors($snippet->errors());
 		}
@@ -30,7 +30,7 @@ class SnippetsController extends BaseController {
 		$snippet->visits += 1;
 		$snippet->save();
 		
-		return View::make('snippets/snippets_show')
+		return View::make('snippet/snippet_show')
 				->with('snippet' , $snippet )
 		;
 	}
@@ -38,7 +38,7 @@ class SnippetsController extends BaseController {
 
 	public function getLatest() {
 		$snippets = Snippet::orderBy('updated_at', 'desc')->take(20)->get();
-		return View::make('snippets/snippets_list')->with('snippets' , $snippets);
+		return View::make('snippet/snippet_list')->with('snippets' , $snippets);
 
 	}
 

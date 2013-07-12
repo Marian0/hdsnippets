@@ -1,13 +1,13 @@
-@extends('_layouts.frontend')
+@extends('_layout.frontend')
 
 @section('main')
 
 	<div id="login" class="login">
 		<h1>Register an Account</h1>
 		<p class="lead">Register an account to share your snippets. It's free and takes 3 seconds.</p>
-		{{ Form::open(array('route' => 'user.store')) }}
+		{{ Form::open(array('route' => 'user.register')) }}
 
-			@include('_partials.notifications')
+			@include('_partial.notifications')
 			<div class="control-group">
 				{{ Form::label('first_name', 'First Name') }}
 				<div class="controls">
