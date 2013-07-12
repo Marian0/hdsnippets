@@ -18,7 +18,7 @@ class SnippetController extends BaseController {
 
 		if ($snippet->save()) {
 			Notification::success('The snippet is now created');
-			return Redirect::route('snippet.show', $snippet->id);
+			return Redirect::route('snippet.show_slug', $snippet->slug);
 		} else {
 			return Redirect::back()->withInput()->withErrors($snippet->errors());
 		}
@@ -27,16 +27,25 @@ class SnippetController extends BaseController {
 	public function show($id) {
 		$snippet = Snippet::find($id); //TODO: VALIDATES IF EXISTS
 		
-		$snippet->visits += 1;
-		$snippet->save();
+		$snippet->addVisit();
 		
 		return View::make('snippet/snippet_show')
 				->with('snippet' , $snippet )
 		;
 	}
 
+	public function show_slug($slug) {
+		$snippet = Snippet::where('slug' , '=', $slug )->get()->first();
 
-	public function getLatest() {
+		$snippet->addVisit();
+		
+		return View::make('snippet/snippet_show')
+				->with('snippet' , $snippet )
+		;
+
+	}
+
+	public function show_latest() {
 		$snippets = Snippet::orderBy('updated_at', 'desc')->take(20)->get();
 		return View::make('snippet/snippet_list')->with('snippets' , $snippets);
 

@@ -40,7 +40,7 @@ class AuthController extends BaseController {
 	 * Logout action
 	 * @return Redirect
 	 */
-	public function getLogout() {
+	public function logout() {
 		Sentry::logout();
 
 		return Redirect::route('homepage');
@@ -78,7 +78,7 @@ class AuthController extends BaseController {
 				return Redirect::route('user.register')->withInput()->withErrors($errors);
 			}
 		}
-		return View::make('users.register');
+		return View::make('user.register');
 	}
 
 

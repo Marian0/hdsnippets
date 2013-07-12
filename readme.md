@@ -25,6 +25,10 @@
 
 
 ## Conventions
-Views wich cant render alone, starts with _
+- Views wich cant render alone, starts with _
 
-All names are singular, except of the table names
+- All names are singular, except of the table names
+
+- Models and Method of models ar CamelCase
+
+- Atributes of models and controller functions are lower_case

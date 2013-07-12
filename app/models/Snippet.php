@@ -96,4 +96,13 @@ class Snippet extends Ardent {
 
         return true;
     }
+
+    public $timestamps = true;
+
+    public function addVisit() {
+    	//Cancel updating timestamps
+    	$this->timestamps = false;
+    	$this->visits++;
+    	$this->save();    	
+    }
 }

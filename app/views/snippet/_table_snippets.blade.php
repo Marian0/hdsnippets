@@ -18,7 +18,7 @@
 	        <td>{{ $snippet->title }}</td>
 	        <td>{{ $snippet->description }}</td>
 	        <td>{{ $snippet->author_name() }}</td>
-	        <td><a href="{{ URL::route('snippet.show', array('id' => $snippet->id) ) }}">View</a></td>
+	        <td><a href="{{ URL::route('snippet.show_slug', array('slug' => $snippet->slug) ) }}">View</a></td>
 	      </tr>
 		  @endforeach
 	    </tbody>
