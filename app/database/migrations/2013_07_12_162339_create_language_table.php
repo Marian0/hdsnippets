@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSnippetsLanguage extends Migration {
+class CreateLanguageTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,12 @@ class AddSnippetsLanguage extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('snippets', function(Blueprint $table)
+		Schema::create('languages', function(Blueprint $table)
 		{
-			$table->integer('language_id')->default(0);
+			$table->increments('id');
+			$table->string('short_name')->unique();
+			$table->string('name');
+
 		});
 	}
 
@@ -25,10 +28,7 @@ class AddSnippetsLanguage extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('snippets', function(Blueprint $table)
-		{
-			$table->dropColumn('language_id');
-		});
+		Schema::drop('languages');
 	}
 
 }

@@ -36,9 +36,9 @@
 			</div>
 
 			<div class="control-group">
-				{{ Form::label('code_language', 'Language') }}
+				{{ Form::label('language_id', 'Language') }}
 				<div class="controls">
-					{{ Form::select('code_language', Snippet::getLanguagesForPulldown()) }}
+					{{ Form::select('language_id', Language::getLanguagesForPulldown() ) }}
 				</div>
 			</div>
 

@@ -13,9 +13,9 @@
 	{{ $snippet->description }}
 	</div>
 
-	<h4>The snippet | Language <span class="label label-important">{{ $snippet->getFriendlyLanguage() }}</span></h4>
+	<h4>The snippet | Language <span class="label label-important">{{ $snippet->language_name() }}</span></h4>
 	
-	<pre class="syntaxCode" data-language='{{ $snippet->getLanguageShortCode() }}'>{{{ trim($snippet->snippet) }}}</pre>
+	<pre class="syntaxCode" data-language='{{ $snippet->language_short_name() }}'>{{{ trim($snippet->snippet) }}}</pre>
 	
 	<h4>Ranking</h4>
 	<ul>
