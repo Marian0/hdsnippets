@@ -18,6 +18,7 @@ Route::get('snippet/public/{slug}', array('as' => 'snippet.show_slug', 'uses' =>
 Route::group(array('before' => 'auth'), function() {
 	Route::get('snippet/create', array('as' => 'snippet.create', 'uses' => 'SnippetController@create'));
     Route::post('snippet/store', array('as' => 'snippet.store', 'uses' => 'SnippetController@store'));
+	Route::get('snippet/user/{user_id}', array('as' => 'snippet.show_by_user', 'uses' => 'SnippetController@show_by_user'));
 });
 
 Route::get('admin/logout', array('as' => 'snippet.popular', 'uses' => 'SnippetController@show_popular'));

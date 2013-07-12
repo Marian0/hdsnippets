@@ -13,6 +13,7 @@ class SnippetController extends BaseController {
 		$snippet->title = Input::get('title');
 		$snippet->description = Input::get('description');
 		$snippet->snippet = Input::get('snippet');
+		$snippet->private = Input::get('private',0);
 		$snippet->language_id = (int) Input::get('language_id', 0);
 		$snippet->user_id = Sentry::getUser()->id;
 
@@ -46,7 +47,12 @@ class SnippetController extends BaseController {
 	}
 
 	public function show_latest() {
-		$snippets = Snippet::orderBy('updated_at', 'desc')->take(20)->get();
+		$snippets = Snippet::orderBy('updated_at', 'desc')->where('private' , '=', 0 )->take(20)->get();
+		return View::make('snippet/snippet_list')->with('snippets' , $snippets);
+	}
+
+	public function show_by_user($user_id) {
+		$snippets = Snippet::where('user_id' , '=', $user_id )->get();
 		return View::make('snippet/snippet_list')->with('snippets' , $snippets);
 
 	}

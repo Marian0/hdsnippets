@@ -40,7 +40,7 @@
 		           <li class="dropdown">
 		            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ Sentry::getUser()->email }} <b class="caret"></b></a>
 		            <ul class="dropdown-menu" id="swatch-menu">
-		              <li><a href="../default/">My Snippets</a></li>
+		              <li><a href="{{ URL::route('snippet.show_by_user', array('user_id' => Sentry::getUser()->id) )  }}">My Snippets</a></li>
 		              <li><a href="../default/">Profile</a></li>
 		              <li class="divider"></li>
 		              <li><a href="{{ URL::route('user.logout') }}">Logout</a></li>

@@ -57,6 +57,10 @@ class Snippet extends Ardent {
         	$this->slug = $this->id . '-' . $this->slug;
         }
 
+        //Calculate private hash
+
+        $this->private_hash = md5( $this->id . $this->author->password );
+
         return true;
     }
 

@@ -42,6 +42,13 @@
 				</div>
 			</div>
 
+			<div class="control-group">
+				{{ Form::label('private', 'Private?') }}
+				<div class="controls">
+					{{ Form::checkbox('private', true, false)}}
+				</div>
+			</div>
+
 			<div class="form-actions">
 				{{ Form::submit('Save', array('class' => 'btn btn-success btn-save btn-large')) }}
 			</div>
