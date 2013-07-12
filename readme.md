@@ -23,3 +23,8 @@
 
 
 
+
+## Conventions
+Views wich cant render alone, starts with _
+
+All names are singular, except of the table names

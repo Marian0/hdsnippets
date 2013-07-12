@@ -18,13 +18,13 @@ class SnippetController extends BaseController {
 
 		if ($snippet->save()) {
 			Notification::success('The snippet is now created');
-			return Redirect::route('snippet.view', $snippet->id);
+			return Redirect::route('snippet.show', $snippet->id);
 		} else {
 			return Redirect::back()->withInput()->withErrors($snippet->errors());
 		}
 	}
 	
-	public function view($id) {
+	public function show($id) {
 		$snippet = Snippet::find($id); //TODO: VALIDATES IF EXISTS
 		
 		$snippet->visits += 1;

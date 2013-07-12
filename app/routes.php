@@ -11,7 +11,7 @@ Route::any('user/register', array('as' => 'user.register', 'uses' => 'AuthContro
 //View Latest Snippets
 Route::get('snippet/latest', array('as' => 'snippet.latest', 'uses' => 'SnippetController@getLatest'));
 //View Snippets profile
-Route::get('snippet/view/{id}', array('as' => 'snippet.view', 'uses' => 'SnippetController@view'));
+Route::get('snippet/view/{id}', array('as' => 'snippet.show', 'uses' => 'SnippetController@show'));
 
 //Secured controllers
 Route::group(array('before' => 'auth'), function() {
