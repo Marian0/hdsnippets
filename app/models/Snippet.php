@@ -88,14 +88,8 @@ class Snippet extends Ardent {
 
 
         //Check if more than 1 has the same slug
-        while (true) {
-        	$count_snippet = Snippet::where('slug' , '=', $this->slug )->count();
-        	if ($count_snippet < 2 ) {
-        		break;
-        	}
-      //   	var_dump($count_snippet);
-      //   	var_dump($count_snippet == 0);
-    		// dd("anda mal");
+    	$count_snippet = Snippet::where('slug' , '=', $this->slug )->count();
+    	if ($count_snippet > 1 ) {
         	//Slug colission => recalculate slug
         	$this->slug = $this->id . '-' . $this->slug;
         }
