@@ -1,6 +1,6 @@
 <?php if (count($snippets) > 0) : ?>
 	<div>
-		@include('_partials.notifications')
+		@include('_partial.notifications')
 		<table class="table table-bordered table-striped table-hover">
 	    <thead>
 	      <tr>
@@ -18,7 +18,7 @@
 	        <td>{{ $snippet->title }}</td>
 	        <td>{{ $snippet->description }}</td>
 	        <td>{{ $snippet->author_name() }}</td>
-	        <td><a href="{{ URL::route('snippets.view', array('id' => $snippet->id) ) }}">View</a></td>
+	        <td><a href="{{ URL::route('snippet.show', array('id' => $snippet->id) ) }}">View</a></td>
 	      </tr>
 		  @endforeach
 	    </tbody>

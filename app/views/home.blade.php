@@ -1,4 +1,4 @@
-@extends('_layouts.frontend')
+@extends('_layout.frontend')
 
 @section('main')
 
@@ -13,6 +13,6 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	
 	<h2>Latest Snippets</h2>
-    @include('snippets._table_snippets')
+    @include('snippet._table_snippets')
 
 @stop
