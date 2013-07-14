@@ -59,7 +59,7 @@ class Snippet extends Ardent {
 
         //Calculate private hash
 
-        $this->private_hash = md5( $this->id . $this->author->password );
+        $this->private_hash = md5( microtime() . $this->id . $this->author->password );
 
         return true;
     }
