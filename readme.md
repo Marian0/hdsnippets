@@ -32,3 +32,4 @@
 - Models and Method of models ar CamelCase
 
 - Atributes of models and controller functions are lower_case
+- Foreign keys model_id
