@@ -5,6 +5,7 @@
 	    <thead>
 	      <tr>
 	        <th>#</th>
+	        <th>Image</th>
 	        <th>Title</th>
 	        <th>Description</th>
 	        <th>Author</th>
@@ -15,6 +16,11 @@
 	      @foreach ($snippets as $snippet)
 	      <tr>
 	        <td>{{ $snippet->id }}</td>
+	        <?php if ($snippet->image) : ?>
+	        	<td><img src="<?php echo Image::resize($snippet->image, 150, 100); ?>" alt=""></td>
+	        <?php else : ?>
+	        	<td>No Image</td>
+	    	<?php endif; ?>
 	        <td>{{ $snippet->title }}</td>
 	        <td>{{ $snippet->description }}</td>
 	        <td>{{ $snippet->author_name() }}</td>

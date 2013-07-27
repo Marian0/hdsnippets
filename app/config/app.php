@@ -186,6 +186,7 @@ return array(
 		//Alias added by HD
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Notification' => 'Krucas\Notification\Facades\Notification',
+		'Image'           => 'App\Facades\ImageFacade',
 
 	),
 

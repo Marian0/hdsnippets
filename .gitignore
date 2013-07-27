@@ -10,3 +10,5 @@ composer.lock
 
 #Ingoramos la configuración de la DB
 app/config/database.php
+
+public/uploads/*

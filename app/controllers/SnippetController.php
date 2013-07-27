@@ -17,6 +17,11 @@ class SnippetController extends BaseController {
 		$snippet->language_id = (int) Input::get('language_id', 0);
 		$snippet->user_id = Sentry::getUser()->id;
 
+		  // Now that we have the snippet ID we need to move the image
+        if (Input::hasFile('image')) {
+            $snippet->image = Image::upload(Input::file('image'), 'snippets' . $snippet->id);
+        }
+
 		if ($snippet->save()) {
 			Notification::success('The snippet is now created');
 			return Redirect::route('snippet.show_slug', $snippet->slug);

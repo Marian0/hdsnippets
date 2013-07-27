@@ -16,7 +16,10 @@
 	<h4>The snippet | Language <span class="label label-important">{{ $snippet->language_name() }}</span></h4>
 	
 	<pre class="syntaxCode" data-language='{{ $snippet->language_short_name() }}'>{{{ trim($snippet->snippet) }}}</pre>
-	
+	<?php if ($snippet->image) : ?>
+	<h4>Image</h4>
+		<a href="{{ asset($snippet->image) }}"><img src="<?php echo Image::resize($snippet->image, 200, 150); ?>" alt="{{ $snippet->title }}"/></a>
+	<?php endif; ?>
 	<h4>Ranking</h4>
 	<ul>
 		<li>Votes: {{ $snippet->votes }}</li>

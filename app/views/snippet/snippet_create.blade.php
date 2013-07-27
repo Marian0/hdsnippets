@@ -8,7 +8,7 @@
 		<p class="lead">Do it tidy for all the community :)</p>
 
 		@include('_partial.notifications')
-		{{ Form::open(array('route' => 'snippet.store')) }}
+		{{ Form::open(array('route' => 'snippet.store', 'files' => true)) }}
 
 			@if ($errors->has('login'))
 				<div class="alert alert-error">{{ $errors->first('login', ':message') }}</div>
@@ -32,6 +32,13 @@
 				{{ Form::label('snippet', 'The Snippet') }}
 				<div class="controls">
 					{{ Form::textarea('snippet') }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('image', 'Image') }}
+				<div class="controls">
+					{{ Form::file('image') }}
 				</div>
 			</div>
 
