@@ -26,7 +26,7 @@
 					<li><a href="{{ URL::route('tag.latest') }}">Latest</a></li>
 	            </ul>
 	          </li>
-	          <li><a id="swatch-link" href="{{ URL::route('languages.browse') }}">Browse Languages</a></li>
+	          <li><a id="swatch-link" href="{{ URL::route('language.show_browse') }}">Browse Languages</a></li>
 
 	        </ul>
 

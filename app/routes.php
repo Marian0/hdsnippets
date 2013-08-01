@@ -14,6 +14,11 @@ Route::get('snippet/latest', array('as' => 'snippet.latest', 'uses' => 'SnippetC
 Route::get('snippet/private/{hash}', array('as' => 'snippet.show_private', 'uses' => 'SnippetController@show_private'));
 Route::get('snippet/public/{slug}', array('as' => 'snippet.show_slug', 'uses' => 'SnippetController@show_slug') );
 
+//Languages
+Route::get('languages', array('as' => 'language.show_browse', 'uses' => 'LanguageController@show_browse'));
+
+
+
 //Secured controllers
 Route::group(array('before' => 'auth'), function() {
 	Route::get('snippet/create', array('as' => 'snippet.create', 'uses' => 'SnippetController@create'));
