@@ -6,7 +6,7 @@
 
     <ul>
     <?php foreach ($languages as $language): ?>
-    	<li><a href="">{{$language->name}}</a></li>
+    	<li><a href="{{ URL::route('snippet.show_by_language', array('slug' => $language->short_name) ) }}">{{$language->name}}</a></li>
 	<?php endforeach; ?>
 	</ul>
 @stops

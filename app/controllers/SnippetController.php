@@ -53,13 +53,31 @@ class SnippetController extends BaseController {
 
 	public function show_latest() {
 		$snippets = Snippet::orderBy('updated_at', 'desc')->where('private' , '=', 0 )->take(20)->get();
-		return View::make('snippet/snippet_list')->with('snippets' , $snippets);
+		return View::make('snippet/snippet_list')->with('snippets' , $snippets)->with('subtitle' , 'Latest Snippets');
+	}
+
+
+	public function show_popular() {
+		$snippets = Snippet::orderBy('visits', 'desc')->where('private' , '=', 0 )->take(20)->get();
+		return View::make('snippet/snippet_list')->with('snippets' , $snippets)->with('subtitle' , 'Popular Snippets');
 	}
 
 	public function show_by_user($user_id) {
 		$snippets = Snippet::where('user_id' , '=', $user_id )->get();
-		return View::make('snippet/snippet_list')->with('snippets' , $snippets);
+		return View::make('snippet/snippet_list')->with('snippets' , $snippets)->with('subtitle' , 'User Snippets');
 
+	}
+
+	public function show_by_language($slug) {
+		$language = Language::where('short_name' , '=', $slug )->get()->first();
+
+		if (!$language) {
+			App::abort(404, 'Language not found');
+		}
+
+		$snippets = Snippet::where('language_id' , '=', $language->id )->get();
+		
+		return View::make('snippet/snippet_list')->with('snippets' , $snippets)->with('subtitle' , $language->name . ' Snippets');
 	}
 
 }

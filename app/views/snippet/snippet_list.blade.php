@@ -2,7 +2,7 @@
 
 @section('main')
 
-    <h1>Latest Snippets</h1>
+    <h1>{{ $subtitle }}</h1>
 
     @include('snippet._table_snippets')
 

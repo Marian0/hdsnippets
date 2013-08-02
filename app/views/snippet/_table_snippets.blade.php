@@ -39,4 +39,8 @@
         </ul>
       </div>
 	</div>
+<?php else: ?>
+	<div class="alert-info alert">
+		Ops, we could't find Snippets here...
+	</div>
 <?php endif; ?>
