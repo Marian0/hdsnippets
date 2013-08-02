@@ -1,4 +1,3 @@
-app/storage/
 /bootstrap/compiled.php
 /vendor
 composer.phar
