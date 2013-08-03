@@ -4,10 +4,12 @@
 Route::get('/', array('as' => 'homepage', 'uses' => 'StaticPageController@homepage'));
 
 //Login/Logout
-Route::any('user/login', array('as' => 'user.login', 'uses' => 'AuthController@login'));
-Route::get('user/logout', array('as' => 'user.logout', 'uses' => 'AuthController@logout'));
+Route::any('user/login', array('as' => 'user.login', 'uses' => 'UserController@login'));
+Route::get('user/logout', array('as' => 'user.logout', 'uses' => 'UserController@logout'));
 //Registering
-Route::any('user/register', array('as' => 'user.register', 'uses' => 'AuthController@register'));
+Route::any('user/register', array('as' => 'user.register', 'uses' => 'UserController@register'));
+//Registering
+Route::any('user/edit_profile', array('as' => 'user.edit_profile', 'uses' => 'UserController@edit_profile'));
 //View Latest Snippets
 Route::get('snippet/latest', array('as' => 'snippet.latest', 'uses' => 'SnippetController@show_latest'));
 Route::get('snippet/popular', array('as' => 'snippet.popular', 'uses' => 'SnippetController@show_popular'));
@@ -19,6 +21,8 @@ Route::get('snippet/public/{slug}', array('as' => 'snippet.show_slug', 'uses' =>
 Route::get('languages', array('as' => 'language.show_browse', 'uses' => 'LanguageController@show_browse'));
 Route::get('language/{slug}', array('as' => 'snippet.show_by_language', 'uses' => 'SnippetController@show_by_language'));
 
+//View profile
+Route::get('user/{user_id}', array('as' => 'user.profile', 'uses' => 'UserController@profile'));
 
 
 //Secured controllers
@@ -28,7 +32,15 @@ Route::group(array('before' => 'auth'), function() {
 	Route::get('snippet/user/{user_id}', array('as' => 'snippet.show_by_user', 'uses' => 'SnippetController@show_by_user'));
 });
 
-Route::get('admin/logout', array('as' => 'tag.popular', 'uses' => 'TagController@getPopular'));
-Route::get('admin/logout', array('as' => 'tag.latest', 'uses' => 'TagController@getLatest'));
-Route::get('admin/logout', array('as' => 'languages.browse', 'uses' => 'SnippetController@getByLanguages'));
+//Tags
+Route::get('tag/popular', array('as' => 'tag.popular', 'uses' => 'TagController@show_popular'));
+Route::get('tag/latest', array('as' => 'tag.latest', 'uses' => 'TagController@show_latest'));
 
+
+//Handling exceptions
+App::missing(function($exception)
+{
+    return View::make('_partial/error')
+				->with('exception' , $exception )
+		;
+});

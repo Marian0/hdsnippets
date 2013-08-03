@@ -117,6 +117,7 @@ return array(
 		//Added by HD
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Krucas\Notification\NotificationServiceProvider',
+		'Mews\Captcha\CaptchaServiceProvider',
 
 	),
 
@@ -187,6 +188,7 @@ return array(
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Notification' => 'Krucas\Notification\Facades\Notification',
 		'Image'           => 'App\Facades\ImageFacade',
+		'Captcha' => 'Mews\Captcha\Facades\Captcha',
 
 	),
 

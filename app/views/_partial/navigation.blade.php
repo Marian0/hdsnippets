@@ -7,7 +7,7 @@
 	         <span class="icon-bar"></span>
 	         <span class="icon-bar"></span>
 	       </a>
-	       <a class="brand" href="{{ URL::route('homepage') }}">HD Snippets</a>
+	       <a class="brand" href="{{ URL::route('homepage') }}">HDS</a>
 	       <div class="nav-collapse collapse" id="main-menu">
 	        <ul class="nav" id="main-menu-left">
 	         <li class="dropdown">
@@ -26,7 +26,7 @@
 					<li><a href="{{ URL::route('tag.latest') }}">Latest</a></li>
 	            </ul>
 	          </li>
-	          <li><a id="swatch-link" href="{{ URL::route('language.show_browse') }}">Browse Languages</a></li>
+	          <li><a id="swatch-link" href="{{ URL::route('language.show_browse') }}">Languages</a></li>
 
 	        </ul>
 
@@ -41,7 +41,7 @@
 		            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ Sentry::getUser()->email }} <b class="caret"></b></a>
 		            <ul class="dropdown-menu" id="swatch-menu">
 		              <li><a href="{{ URL::route('snippet.show_by_user', array('user_id' => Sentry::getUser()->id) )  }}">My Snippets</a></li>
-		              <li><a href="../default/">Profile</a></li>
+		              <li><a href="{{ URL::route('user.edit_profile') }}">Profile</a></li>
 		              <li class="divider"></li>
 		              <li><a href="{{ URL::route('user.logout') }}">Logout</a></li>
 		            </ul>

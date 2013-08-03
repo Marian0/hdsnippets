@@ -16,21 +16,28 @@
 
 			<div class="control-group">
 				{{ Form::label('title', 'Title') }}
-				<div class="controls">
+				<div class="controls form_title">
 					{{ Form::text('title') }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				{{ Form::label('description', 'Short Description') }}
-				<div class="controls">
+				<div class="controls form_description">
 					{{ Form::textarea('description') }}
 				</div>
 			</div>
 
 			<div class="control-group">
-				{{ Form::label('snippet', 'The Snippet') }}
+				{{ Form::label('language_id', 'Language') }}
 				<div class="controls">
+					{{ Form::select('language_id', Language::getLanguagesForPulldown() ) }}
+				</div>
+			</div>
+
+			<div class="control-group form_snippet">
+				{{ Form::label('snippet', 'The Snippet') }}
+				<div class="controls full_width">
 					{{ Form::textarea('snippet') }}
 				</div>
 			</div>
@@ -42,12 +49,7 @@
 				</div>
 			</div>
 
-			<div class="control-group">
-				{{ Form::label('language_id', 'Language') }}
-				<div class="controls">
-					{{ Form::select('language_id', Language::getLanguagesForPulldown() ) }}
-				</div>
-			</div>
+
 
 			<div class="control-group">
 				{{ Form::label('private', 'Private?') }}
@@ -55,7 +57,7 @@
 					{{ Form::checkbox('private', true, false)}}
 				</div>
 			</div>
-
+			<p>Note: Private snippets will not show in lists.</p>
 			<div class="form-actions">
 				{{ Form::submit('Save', array('class' => 'btn btn-success btn-save btn-large')) }}
 			</div>

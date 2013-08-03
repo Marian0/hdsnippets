@@ -9,7 +9,8 @@
 		"dflydev/markdown": "v1.0.2",
 		"laravelbook/ardent": "dev-master",
 		"edvinaskrucas/notification": "1.*",
-		"imagine/Imagine": "v0.4.1"
+		"imagine/Imagine": "v0.4.1",
+		"mews/captcha": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
